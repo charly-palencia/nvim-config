@@ -47,8 +47,9 @@ return packer.startup(function(use)
   use "kyazdani42/nvim-web-devicons"
   use "kyazdani42/nvim-tree.lua"
 
-  use "nvim-lualine/lualine.nvim"
   use "akinsho/toggleterm.nvim"
+
+  use 'feline-nvim/feline.nvim'
 
   use "lewis6991/impatient.nvim"
   use "lukas-reineke/indent-blankline.nvim"
@@ -71,6 +72,7 @@ return packer.startup(function(use)
 
   -- Colorschemes
   use "olimorris/onedarkpro.nvim"
+  use 'catppuccin/nvim'
   use "ellisonleao/gruvbox.nvim"
   use "themercorp/themer.lua"
 
@@ -152,9 +154,10 @@ return packer.startup(function(use)
 
   -- Treesitter
   use "nvim-treesitter/nvim-treesitter"
+  use 'nvim-treesitter/nvim-treesitter-context'
   use "JoosepAlviste/nvim-ts-context-commentstring"
   use "p00f/nvim-ts-rainbow"
-   use {'christianchiarulli/nvim-ts-rainbow'}
+  use { 'christianchiarulli/nvim-ts-rainbow' }
   use "nvim-treesitter/playground"
   use "windwp/nvim-ts-autotag"
   -- use "romgrk/nvim-treesitter-context"
