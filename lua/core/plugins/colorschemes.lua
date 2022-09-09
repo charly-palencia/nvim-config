@@ -1,6 +1,5 @@
--- UI / color scheme / theme
-vim.o.background = "dark"
 
+vim.o.background = "dark"
 vim.g.catppuccin_flavour = "mocha"
 -- latte (light)
 -- frappe (dark)
@@ -97,48 +96,3 @@ require("catppuccin").setup({
   },
 })
 vim.cmd([[colorscheme catppuccin]])
-
--- status line
-local ctp_feline = require('catppuccin.groups.integrations.feline')
-require('feline').setup({
-  components = ctp_feline.get(),
-})
-require('feline').winbar.setup()
-
--- tabs
-require('luatab').setup()
-
--- quickfix/location list
-require('pqf').setup()
-
-vim.notify = require('notify')
-
-require('dressing').setup({
-  select = {
-    enabled = true,
-    -- Priority list of preferred vim.select implementations
-    backend = { "telescope", "nui", "fzf_lua", "fzf", "builtin" },
-  }
-})
-
-require('colorizer').setup(
-  {
-    '*'; -- Highlight all files
-    '[Plugins]'; -- exclude vim plug
-    css = { css = true; };
-  },
-  { mode = 'background' }
-)
-
-local wilder = require('wilder')
-wilder.setup({ modes = { ':', '/', '?' } })
--- wilder.set_option('pipeline', {
---   wilder.branch(
---     wilder.cmdline_pipeline(),
---     wilder.search_pipeline()
---   ),
--- })
---
--- wilder.set_option('renderer', wilder.wildmenu_renderer({
---   highlighter = wilder.basic_highlighter(),
--- }))

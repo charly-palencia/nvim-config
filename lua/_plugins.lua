@@ -40,6 +40,8 @@ packer.init {
 
 -- Install your plugins here
 return packer.startup(function(use)
+
+  use('MunifTanjim/nui.nvim')
   -- My plugins here
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
@@ -51,10 +53,14 @@ return packer.startup(function(use)
 
   use 'feline-nvim/feline.nvim'
 
+  use 'j-hui/fidget.nvim'
+
   use "lewis6991/impatient.nvim"
   use "lukas-reineke/indent-blankline.nvim"
   use "goolord/alpha-nvim"
   use "folke/which-key.nvim"
+  use 'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
+  use 'folke/persistence.nvim'
 
   use "norcalli/nvim-colorizer.lua"
   use "windwp/nvim-spectre"
@@ -64,10 +70,10 @@ return packer.startup(function(use)
   use "tversteeg/registers.nvim"
   use { "christianchiarulli/nvim-gps", branch = "text_hl" }
   use { "michaelb/sniprun", run = "bash ./install.sh" }
-  -- use {
-  --   "christianchiarulli/JABS.nvim",
-  --   requires = { "kyazdani42/nvim-web-devicons" }, --optional
-  -- }
+  use {
+    "christianchiarulli/JABS.nvim",
+    requires = { "kyazdani42/nvim-web-devicons" }, --optional
+  }
 
 
   -- Colorschemes
@@ -83,6 +89,8 @@ return packer.startup(function(use)
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-nvim-lua"
+  use('hrsh7th/cmp-nvim-lsp')
+  use('hrsh7th/cmp-nvim-lsp-signature-help')
   -- use {
   --   "tzachar/cmp-tabnine",
   --   config = function()
@@ -117,6 +125,9 @@ return packer.startup(function(use)
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
   use "simrat39/symbols-outline.nvim"
   use "ray-x/lsp_signature.nvim"
+  use 'glepnir/lspsaga.nvim'
+
+  use('folke/lsp-colors.nvim')
   use "b0o/SchemaStore.nvim"
   use {
     "folke/trouble.nvim",
@@ -144,12 +155,15 @@ return packer.startup(function(use)
     module = "copilot_cmp",
   }
   use "RRethy/vim-illuminate"
+  use({ "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim", })
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
   use "nvim-telescope/telescope-media-files.nvim"
   use { 'axkirillov/easypick.nvim', requires = 'nvim-telescope/telescope.nvim' }
-  -- use "nvim-telescope/telescope-ui-select.nvim"
+  use "nvim-telescope/telescope-ui-select.nvim"
+  use('nvim-telescope/telescope-fzy-native.nvim')
   -- use "nvim-telescope/telescope-file-browser.nvim"
 
   -- Treesitter
@@ -174,7 +188,30 @@ return packer.startup(function(use)
 
   -- MISC
   use 'kazhala/close-buffers.nvim'
-  use 'alexghergh/nvim-tmux-navigation'
+  use('numToStr/Comment.nvim')
+  use 'https://gitlab.com/yorickpeterse/nvim-pqf.git'
+  use 'gelguy/wilder.nvim'
+  use('luukvbaal/stabilize.nvim')
+  use('nacro90/numb.nvim')
+  use('stevearc/dressing.nvim')
+  use('iamcco/markdown-preview.nvim')
+  use('beauwilliams/focus.nvim')
+  use('kevinhwang91/nvim-hlslens')
+  use('akinsho/git-conflict.nvim')
+  use('echasnovski/mini.nvim')
+  use('kosayoda/nvim-lightbulb')
+  use('mortepau/codicons.nvim')
+  use('lewis6991/impatient.nvim')
+  use('tpope/vim-git')
+  use('tpope/vim-fugitive')
+  use('tpope/vim-dispatch')
+  use('christoomey/vim-tmux-navigator')
+  use('mileszs/ack.vim')
+  use('tpope/vim-rails')
+  -- use('sainnhe/gruvbox-material')
+  -- use('eddyekofo94/gruvbox-flat.nvim')
+  use('tpope/vim-repeat')
+  use('andymass/vim-matchup')
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()

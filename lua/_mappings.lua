@@ -1,9 +1,9 @@
-local tabs = require('.plugins.tabs')
-local nvimtree = require('.plugins.nvimtree')
-local plug = require('.plugins.plug')
-local git_conflict = require('.plugins.git_conflict')
-local highlight = require('.plugins.highlight')
-local lsp = require('.plugins.lsp')
+local tabs = require('.helpers.tabs')
+local nvimtree = require('.helpers.nvimtree')
+local plug = require('.helpers.plug')
+local git_conflict = require('.helpers.git_conflict')
+local highlight = require('.helpers.highlight')
+local lsp = require('.helpers.lsp')
 
 local telescope_builtin = require('telescope.builtin')
 local wk = require('which-key')
@@ -68,14 +68,6 @@ wk.register({
       r = { nvimtree.refresh_tree, 'Refresh tree' },
       f = { nvimtree.find_file, 'Find file in tree' },
       t = { nvimtree.toggl_tree, 'Toggle tree' },
-    },
-    p = {
-      name = 'Plug',
-      i = { plug.install_plugins, 'Install plugins' },
-      c = { plug.clean_uninstalled_plugins, 'Clean plugins' },
-      s = { plug.plugin_status, 'Plugins status' },
-      u = { plug.update_plugins, 'Update plugins' },
-      U = { plug.upgrade_plug, 'Upgrade Plug (manager)' },
     },
   },
   ['[x'] = { git_conflict.go_to_prev, 'Previous Git Conflict' },
